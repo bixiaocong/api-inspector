@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "01 我的第一个插件",
+  "version": "1.0",
+  "description": "学习课 1：最小插件",
+  "action": {
+    "default_title": "点我看看",
+    "default_popup": "popup.html"
+  }
+}

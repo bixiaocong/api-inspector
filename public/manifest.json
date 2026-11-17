@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "接口面板 (API Inspector)",
+  "version": "0.1.0",
+  "description": "把页面的所有接口请求——地址、参数、返回值——集中展示在一个侧边栏里，不再需要打开 Network。",
+  "minimum_chrome_version": "116",
+  "permissions": ["sidePanel", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开接口面板"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
